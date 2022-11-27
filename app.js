@@ -81,16 +81,8 @@ const request = https.request(url, options, function(response){
   //  console.log(dat);
 
     if (dat.error_count >0)                          {
-      let options = {
-        dotfiles: 'deny',
-        headers: {
-          'x-timestamp': Date.now(),
-          'x-sent': true,
-          'x-result-message': dat.errors[0].error_code // your custom header here
-        }
-      }
 
-      fs.writeFile("/public/data.txt", dat.errors[0].error_code, function(err) {
+      fs.writeFile(__dirname +"/public/data.txt", dat.errors[0].error_code, function(err) {
      if (err) {
          console.log(err);
         }
