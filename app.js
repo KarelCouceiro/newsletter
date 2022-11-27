@@ -10,7 +10,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(bodyparser.urlencoded({extended: true}));
 
-api = "fde63585e848ed630c041bbb2aa739fe-us21";
+api = config.api;
 audience_id = "8ecbd4ebbb";
 var error_type = true;
 const mailchimp = require("@mailchimp/mailchimp_marketing");
@@ -66,7 +66,7 @@ url = "https://us21.api.mailchimp.com/3.0/lists/8ecbd4ebbb";
 
 const options = {
   method: "POST",
-  auth: "KCOU:fde63585e848ed630c041bbb2aa739fe-us21"
+  auth: "KCOU:" + api 
 
 }
 
